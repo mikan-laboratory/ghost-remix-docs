@@ -1,0 +1,67 @@
+# Local Development
+
+## Dependencies
+
+Before you begin local development, ensure that the following dependencies are installed:
+
+- [NPM](https://www.npmjs.com/): A package manager for JavaScript, used to install and manage project dependencies.
+- [Docker](https://www.docker.com/): A platform for developing, shipping, and running applications in isolated environments (containers).
+- [Tilt](https://tilt.dev/): An essential tool for managing microservice development with support for Docker.
+
+## Local Development Setup
+
+To set up your local development environment, follow these steps:
+
+### Get the code
+
+```bash
+# Step 1: Clone the template repository
+
+git clone https://github.com/username/template-repository.git new-project
+
+cd new-project
+
+# Step 2: Create a new repository on GitHub
+
+gh repo create username/new-project --public --source=.
+
+# Step 3: Push the cloned contents to the new repository
+
+git push --set-upstream origin main
+```
+
+### Create an env file
+
+You'll need to create a .env file in the project root, using .env.example as a guide.
+
+### Start Tilt
+
+First, initiate Tilt to orchestrate your microservices:
+
+```bash
+tilt up
+```
+
+### Seed
+
+Use the Seed button in the Ghost section of the Tilt UI to populate basic data.
+
+### Test Docker Build
+
+Ensure your Docker build is correctly configured:
+
+#### Build
+
+Execute the build process:
+
+```bash
+make all
+```
+
+#### Cleanup
+
+After testing, clean up the build environment:
+
+```bash
+make clean-all
+```

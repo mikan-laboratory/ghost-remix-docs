@@ -1,0 +1,80 @@
+# Deployment
+
+The project is set up to be easily deployed to Fly.io, so this guide will explain this workflow.
+
+## Prerequisites
+
+- Create an account at [Fly.io](https://fly.io).
+- [flyctl](https://fly.io/docs/flyctl/): Fly.io command line tool
+
+## All Cases
+
+In the root of the project run `flyctl launch`. This will create prompt you to create an application on Fly.io with the information provided in the `fly.toml`.
+You will be asked if you want to update these settings. Here you can choose a server location that is more relevant. Ensure that the port is set to `8080`.
+
+### Tip
+
+You can use the following command to generate your GHOST_CONTENT_API_KEY and JWT_SECRET
+
+```bash
+# GHOST_CONTENT_API_KEY - follows format Ghost generates
+node -e "console.log(require('crypto').randomBytes(13).toString('hex'))"
+# JWT_SECRET
+node -e "console.log(require('crypto').randomBytes(32).toString('hex'))"
+```
+
+## Automated Deployment
+
+For automated deployment through GitHub Actions:
+
+1. **Get Deploy API Token**: Obtain your Deploy API Token from the Fly dashboard.
+
+2. **Set Secrets**: Configure necessary secrets in your GitHub repository settings.
+
+## Manual Deployment
+
+For a manual deployment process:
+
+#### Authenticate
+
+Login to your Fly account:
+
+```bash
+flyctl auth login
+```
+
+#### Create App
+
+Initialize a new Fly application:
+
+```bash
+flyctl launch
+```
+
+#### Set Secrets
+
+Configure necessary environment secrets:
+
+```bash
+flyctl secrets set GHOST_CONTENT_API_KEY="my-api-key-value" \
+OWNER_EMAIL="my-email-value" \
+OWNER_PASSWORD="my-password-value" \
+MAILGUN_DOMAIN="somedomain" \
+MAILGUN_API_KEY="somekey" \
+MAILGUN_BASE_URL="mailgunbase" \
+JWT_SECRET="somejwtsecret"
+```
+
+#### Deploy
+
+Deploy your application with environment variables:
+
+```bash
+flyctl deploy --env SITE_TITLE="My Site" \
+--env SITE_DESCRIPTION="My website" \
+--env OWNER_NAME="Admin" \
+--env OWNER_SLUG="admin" \
+--env BLOG_URL="mysite.com"
+```
+
+These guides provide comprehensive steps for both local development and deployment to Fly.io, tailored for the Smooth Jazz application.

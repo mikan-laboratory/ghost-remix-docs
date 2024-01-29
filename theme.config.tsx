@@ -1,18 +1,15 @@
-import React from 'react'
-import { DocsThemeConfig } from 'nextra-theme-docs'
+import React from 'react';
+import { DocsThemeConfig } from 'nextra-theme-docs';
 
 const config: DocsThemeConfig = {
-  logo: <span>My Project</span>,
+  logo: <span>Ghost Remix</span>,
   project: {
-    link: 'https://github.com/shuding/nextra-docs-template',
+    link: 'https://github.com/mikan-laboratory/ghost-remix',
   },
-  chat: {
-    link: 'https://discord.com',
-  },
-  docsRepositoryBase: 'https://github.com/shuding/nextra-docs-template',
+  docsRepositoryBase: 'https://github.com/mikan-laboratory/ghost-remix-docs',
   footer: {
-    text: 'Nextra Docs Template',
+    text: 'Ghost Remix Documentation',
   },
-}
+};
 
-export default config
+export default config;
