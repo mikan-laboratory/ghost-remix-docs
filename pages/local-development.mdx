@@ -12,7 +12,7 @@ Before you begin local development, ensure that the following dependencies are i
 
 To set up your local development environment, follow these steps:
 
-### Note
+### Mailgun
 
 You don't need Mailgun to get started, but you'll need for email-based workflows like member sign up.
 Don't worry about the $35 a month price tag, immediately after signing up for the trial, you can downgrade to the flex plan.
@@ -51,7 +51,7 @@ You'll need to create a .env file in the project root, using .env.example as a g
 
 ### Start Tilt
 
-First, initiate Tilt to orchestrate your microservices:
+This will install dependencies, generate a prisma client, and start all services.
 
 ```bash
 tilt up
@@ -60,6 +60,8 @@ tilt up
 ### Seed
 
 Use the Seed button in the Ghost section of the Tilt UI to populate basic data.
+
+    - If you want to inspect the database, you can manually trigger a GUI from the Tilt UI.
 
 ### Test Docker Build
 
