@@ -36,7 +36,7 @@ For deployment through GitHub Actions:
 
 For command line deployment:
 
-#### Set Secrets
+### Set Secrets
 
 Configure necessary environment secrets:
 
@@ -50,7 +50,7 @@ MAILGUN_BASE_URL="mailgunbase" \
 JWT_SECRET="somejwtsecret"
 ```
 
-#### Deploy
+### Deploy
 
 Deploy your application with environment variables:
 
@@ -62,4 +62,8 @@ flyctl deploy --env SITE_TITLE="My Site" \
 --env BLOG_URL="mysite.com"
 ```
 
-These guides provide comprehensive steps for both local development and deployment to Fly.io, tailored for the Smooth Jazz application.
+### Custom Domain and SSL
+
+You can create an SSL certificate with `fly certs create example.com`. Then you'll need to create records on your domain registrar.
+
+You can find detailed instructions [here](https://fly.io/docs/networking/custom-domains-with-fly/).
