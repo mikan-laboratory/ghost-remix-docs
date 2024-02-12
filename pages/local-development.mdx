@@ -32,7 +32,7 @@ Don't worry about the $35 a month price tag, immediately after signing up for th
 ```bash
 # Step 1: Clone the template repository
 
-git clone https://github.com/username/template-repository.git new-project
+git clone https://github.com/mikab-laboratory/ghost-remix.git new-project
 
 cd new-project
 
@@ -65,7 +65,8 @@ Use the Seed button in the Ghost section of the Tilt UI to populate basic data.
 
 ### Engine
 
-The Node engine is set to 18.19 in package.json to match the production runtime. Using a different version locally shouldn't be an issue, but you will see a warning when you run `npm install`. If you want to use this version in development, you can use a tool like [nvm](https://github.com/nvm-sh/nvm?tab=readme-ov-file#install--update-script) to manage multiple Node versions.
+The Node engine is set to 18.19 in package.json to match the production runtime. This follows the Ghost team's advice. You can find more information [here](https://ghost.org/docs/faq/node-versions/#why-follow-lts).
+Using a different version locally shouldn't be an issue, but you will see a warning when you run `npm install`. If you want to use this version in development, you can use a tool like [nvm](https://github.com/nvm-sh/nvm?tab=readme-ov-file#install--update-script) to manage multiple Node versions.
 
 ### Theme
 
