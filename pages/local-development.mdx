@@ -63,6 +63,10 @@ Use the Seed button in the Ghost section of the Tilt UI to populate basic data.
 
     - If you want to inspect the database, you can manually trigger a GUI from the Tilt UI.
 
+### Engine
+
+The Node engine is set to 18.19 in package.json to match the production runtime. Using a different version locally shouldn't be an issue, but you will see a warning when you run `npm install`. If you want to use this version in development, you can use a tool like [nvm](https://github.com/nvm-sh/nvm?tab=readme-ov-file#install--update-script) to manage multiple Node versions.
+
 ### Theme
 
 You can change the theme colors in `app/theme/theme.ts`.
