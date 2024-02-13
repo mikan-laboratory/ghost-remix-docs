@@ -7,7 +7,7 @@ The project is set up to be easily deployed to Fly.io, so this guide will explai
     1. Create an account at [Fly.io](https://fly.io).
     2. Download [flyctl](https://fly.io/docs/flyctl/): Fly.io command line tool
     3. Authenticate with `flyctl auth login`
-    4. In the root of the project run `flyctl launch`. This will create prompt you to create an application on Fly.io with the information provided in the `fly.toml`.
+    4. In the root of the project run `flyctl launch --no-deploy`. This will create prompt you to create an application on Fly.io with the information provided in the `fly.toml`.
     You will be asked if you want to update these settings. Here you can choose a server location that is more relevant. Ensure that the port is set to `8080`.
 
     ### Tip
@@ -25,7 +25,7 @@ The project is set up to be easily deployed to Fly.io, so this guide will explai
 
 For deployment through GitHub Actions:
 
-1. **Get Deploy API Token**: Obtain your Deploy API Token from the Fly dashboard.
+1. **Get Deploy API Token**: Navigate to the newly created application in the Fly.io dashboard and get a deploy token.
 
 2. **Set Secrets**: Configure necessary secrets in your GitHub repository settings.
 
@@ -40,14 +40,20 @@ For command line deployment:
 
 Configure necessary environment secrets:
 
-```bash
+```
 flyctl secrets set GHOST_CONTENT_API_KEY="my-api-key-value" \
-OWNER_EMAIL="my-email-value" \
-OWNER_PASSWORD="my-password-value" \
-MAILGUN_DOMAIN="somedomain" \
-MAILGUN_API_KEY="somekey" \
-MAILGUN_BASE_URL="mailgunbase" \
-JWT_SECRET="somejwtsecret"
+   OWNER_EMAIL="my-email-value" \
+   OWNER_PASSWORD="my-password-value" \
+   MAILGUN_DOMAIN="somedomain" \
+   MAILGUN_API_KEY="somekey" \
+   MAILGUN_BASE_URL="mailgunbase" \
+   JWT_SECRET="somejwtsecret" \
+   SITE_TITLE="My Site" \
+   SITE_DESCRIPTION="My website" \
+   OWNER_NAME="Admin" \
+   OWNER_SLUG="admin" \
+   BLOG_URL="https://mysite.com" \
+   COMMENT_SETTINGS="all"
 ```
 
 ### Deploy
@@ -55,12 +61,7 @@ JWT_SECRET="somejwtsecret"
 Deploy your application with environment variables:
 
 ```bash
-flyctl deploy --env SITE_TITLE="My Site" \
---env SITE_DESCRIPTION="My website" \
---env OWNER_NAME="Admin" \
---env OWNER_SLUG="admin" \
---env BLOG_URL="https://mysite.com" \
---env COMMENT_SETTINGS="all"
+flyctl deploy
 ```
 
 ### Custom Domain and SSL
