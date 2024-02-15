@@ -14,21 +14,6 @@ Before you begin local development, ensure that the following dependencies are i
 
 To set up your local development environment, follow these steps:
 
-### Mailgun
-
-You don't need Mailgun to get started, but you'll need for email-based workflows like member sign up.
-Don't worry about the $35 a month price tag, immediately after signing up for the trial, you can downgrade to the flex plan.
-
-1. Create [Mailgun](https://www.mailgun.com/) account.
-
-2. Navigate to Sending -> Domains. You should see a test domain that looks like `sandbox1234567890abcdef1234567890ab.mailgun.org`
-
-3. Add your email as an authorized recipient.
-
-4. Scroll down and select API Keys. Create a new API key and copy the key.
-
-5. Find the correct base URL [here](https://documentation.mailgun.com/en/latest/api-intro.html#base-url).
-
 ### Get the code
 
 Use the template to create your own repository.
@@ -57,6 +42,21 @@ gh repo create username/new-project --private --source=.
 git push --set-upstream origin main
 ```
 
+### Mailgun
+
+You don't need Mailgun to get started, but you'll need for email-based workflows like member sign up.
+Don't worry about the $35 a month price tag, immediately after signing up for the trial, you can downgrade to the flex plan.
+
+1. Create [Mailgun](https://www.mailgun.com/) account.
+
+2. Navigate to Sending -> Domains. You should see a test domain that looks like `sandbox1234567890abcdef1234567890ab.mailgun.org`
+
+3. Add your email as an authorized recipient.
+
+4. Scroll down and select API Keys. Create a new API key and copy the key.
+
+5. Find the correct base URL [here](https://documentation.mailgun.com/en/latest/api-intro.html#base-url).
+
 ### Create an env file
 
 You'll need to create a .env file in the project root, using .env.example as a guide.
@@ -73,7 +73,8 @@ tilt up
 
 Use the Seed button in the Ghost section of the Tilt UI to populate basic data.
 
-    - If you want to inspect the database, you can manually trigger a GUI from the Tilt UI.
+- The production script seeds an owner and basic settings. The development script includes posts and comments.
+- If you want to inspect the database, you can manually trigger a GUI from the Tilt UI.
 
 ### Engine
 
