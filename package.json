@@ -6,7 +6,7 @@
     "dev": "next dev",
     "build": "next build",
     "start": "next start",
-    "export": "next build && touch out/.nojekyll"
+    "export": "next build && touch out/.nojekyll && touch out/CNAME && echo 'ghostremix.com' > out/CNAME"
   },
   "dependencies": {
     "next": "^14.1.0",
