@@ -3,6 +3,10 @@ name: Deploy Nextra App to GitHub Pages
 on:
   workflow_dispatch:
 
+permissions:
+  contents: read
+  pages: write
+
 jobs:
   build-and-deploy:
     runs-on: ubuntu-latest
