@@ -90,30 +90,6 @@ To keep your fork up to date with the original repository:
 
 Remember, if you make changes you want to contribute back to the original project, create a new branch for your changes and submit a pull request from that branch.
 
-#### GitHub UI
-
-- Navigate to the [repository](https://github.com/mikan-laboratory/ghost-remix), click `Use this template`, and follow the instructions.
-
-#### GitHub CLI
-
-- Get the [GitHub CLI](https://cli.github.com/)
-
-```bash
-# Step 1: Clone the template repository
-
-git clone https://github.com/mikab-laboratory/ghost-remix.git new-project
-
-cd new-project
-
-# Step 2: Create a new repository on GitHub
-
-gh repo create username/new-project --private --source=.
-
-# Step 3: Push the cloned contents to the new repository
-
-git push --set-upstream origin main
-```
-
 ### Mailgun
 
 You don't need Mailgun to get started, but you'll need for email-based workflows like member sign up.
@@ -184,3 +160,7 @@ After testing, clean up the build environment:
 ```bash
 make clean-all
 ```
+
+### RapidRead
+
+- Add `RapidRead` with an [Anthropic API Key](https://docs.anthropic.com/claude/docs/getting-access-to-claude)
