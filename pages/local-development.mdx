@@ -12,11 +12,83 @@ Before you begin local development, ensure that the following dependencies are i
 
 ## Local Development Setup
 
-To set up your local development environment, follow these steps:
-
 ### Get the code
 
-Use the template to create your own repository.
+You have two options to get started with GhostRemix: using the template or forking the repository. Here's when to use each approach:
+
+#### Using the Template
+
+Use the template when:
+
+- You want to create a private repository (GitHub doesn't allow forking directly to a private repo).
+- You don't plan to contribute back to the original project.
+- You want a clean start without the original project's commit history.
+
+To use the template:
+
+1. Navigate to the [GhostRemix repository](https://github.com/mikan-laboratory/ghost-remix).
+2. Click the "Use this template" button.
+3. Choose a name for your new repository and select whether it should be public or private.
+4. Click "Create repository from template".
+
+Alternatively, you can use the GitHub CLI:
+
+```bash
+gh repo create your-new-repo --template mikan-laboratory/ghost-remix --private
+cd your-new-repo
+git push --set-upstream origin main
+```
+
+#### Forking the Repository
+
+Fork the repository when:
+
+- You want to contribute back to the original project.
+- You want to keep up with updates to the original project.
+- You're okay with a public repository (you can make it private later, but it starts as public).
+
+To fork the repository:
+
+1. Navigate to the [GhostRemix repository](https://github.com/mikan-laboratory/ghost-remix).
+2. Click the "Fork" button in the top-right corner.
+3. Choose where to fork the repository (your personal account or an organization).
+4. Optionally, you can change the name of the forked repository.
+5. Click "Create fork".
+
+After forking, clone your forked repository:
+
+```bash
+git clone https://github.com/your-username/ghost-remix.git
+cd ghost-remix
+```
+
+To keep your fork up to date with the original repository:
+
+1. Add the original repository as an upstream remote:
+
+   ```bash
+   git remote add upstream https://github.com/mikan-laboratory/ghost-remix.git
+   ```
+
+2. Fetch the latest changes from the upstream repository:
+
+   ```bash
+   git fetch upstream
+   ```
+
+3. Merge the changes into your local main branch:
+
+   ```bash
+   git checkout main
+   git merge upstream/main
+   ```
+
+4. Push the updated main branch to your fork:
+   ```bash
+   git push origin main
+   ```
+
+Remember, if you make changes you want to contribute back to the original project, create a new branch for your changes and submit a pull request from that branch.
 
 #### GitHub UI
 
