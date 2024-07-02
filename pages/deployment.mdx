@@ -47,6 +47,8 @@ flyctl secrets set GHOST_CONTENT_API_KEY="my-api-key-value" \
    MAILGUN_DOMAIN="somedomain" \
    MAILGUN_API_KEY="somekey" \
    MAILGUN_BASE_URL="mailgunbase" \
+   MAILGUN_USER="postmaster@somedomain \
+   MAILGUN_PASSWORD="password" \
    JWT_SECRET="somejwtsecret" \
    SITE_TITLE="My Site" \
    SITE_DESCRIPTION="My website" \
@@ -54,6 +56,8 @@ flyctl secrets set GHOST_CONTENT_API_KEY="my-api-key-value" \
    OWNER_SLUG="admin" \
    BLOG_URL="https://mysite.com" \
    COMMENT_SETTINGS="all" \
+   MEMBERS_SIGNUP_ACCESS="none" \
+   RAPID_READ="all" \
    ANTHROPIC_API_KEY="somekey"
 ```
 
@@ -79,3 +83,18 @@ flyctl certs create www.mysite.com
 ```
 
 3. Use the ipv4 address to create an A record in your DNS provider, and the ipv6 address to create a AAAA record. Create a CNAME record for `www`.
+
+## Caching Strategies
+
+GhostRemix employs a two-pronged caching approach to optimize performance:
+
+1. Remix Application Caching:
+
+   - Utilizes an in-memory cache for dynamic content.
+   - Handles its own cache invalidation for up-to-date data.
+
+2. Nginx Static Asset Caching (Production only):
+   - Caches static assets (images, CSS, JS) on disk.
+   - Reduces load on the Remix application for frequently accessed static content.
+
+This dual strategy ensures efficient handling of both dynamic content and static assets, significantly reducing strain on the Remix application server.
