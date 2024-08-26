@@ -9,7 +9,7 @@
     "export": "next build && touch out/.nojekyll && touch out/CNAME && echo 'ghostremix.com' > out/CNAME"
   },
   "dependencies": {
-    "next": "^14.2.5",
+    "next": "^14.2.6",
     "nextra": "latest",
     "nextra-theme-docs": "latest",
     "react": "^18.2.0",
